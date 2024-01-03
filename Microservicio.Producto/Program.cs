@@ -1,4 +1,6 @@
+using Application.Interfaces;
 using Infrastructure.Persistence;
+using Infrastructure.Querys;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,12 @@ builder.Services.AddSwaggerGen();
 // Custom
 var connectionString = builder.Configuration["ConnectionString"];
 builder.Services.AddDbContext<ProductoContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<IColorProductoQuery, ColorProductoQuery>();
+builder.Services.AddScoped<IColorQuery, ColorQuery>();
+builder.Services.AddScoped<IProductoQuery, ProductoQuery>();
+builder.Services.AddScoped<ITalleProductoQuery, TalleProductoQuery>();
+builder.Services.AddScoped<ITalleQuery, TalleQuery>();
 
 var app = builder.Build();
 
