@@ -1,6 +1,6 @@
 ﻿namespace Application.Request
 {
-    public class ColorRequest
+    public class TalleRequest
     {
         public string Descripcion { get; set; }
     }

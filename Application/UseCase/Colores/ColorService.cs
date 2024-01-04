@@ -4,11 +4,6 @@ using Application.Interfaces.IService;
 using Application.Request;
 using Application.Response;
 using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.UseCase.Colores
 {
@@ -32,7 +27,7 @@ namespace Application.UseCase.Colores
                 throw new ArgumentException($"No se encontró el color con el identificador {colorId}.");
             }
 
-           return MappingColor(color);
+            return MappingColor(color);
         }
 
         public List<ColorResponse> GetColorList()
@@ -77,7 +72,7 @@ namespace Application.UseCase.Colores
         {
             var color = _query.GetColorById(colorId);
 
-            if (colorId == null)
+            if (color == null)
             {
                 throw new ArgumentException($"No se encontró el color con el identificador {colorId}.");
             }
@@ -96,6 +91,11 @@ namespace Application.UseCase.Colores
                 Id = color.ColorId,
                 Descripcion = color.Descripcion,
             };
+        }
+
+        public bool ExisteColor(string color)
+        {
+            return _query.ExisteColor(color);
         }
     }
 }

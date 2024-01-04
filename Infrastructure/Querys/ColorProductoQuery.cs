@@ -1,11 +1,6 @@
 ﻿using Application.Interfaces.IQuerys;
 using Domain.Entities;
 using Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Querys
 {
@@ -28,7 +23,7 @@ namespace Infrastructure.Querys
         public List<ColorProducto> GetColorProductoList()
         {
             var colorProductoList = _context.ColoresProductos.ToList();
-            
+
             return colorProductoList;
         }
     }

@@ -1,5 +1,8 @@
 using Application.Interfaces.ICommand;
 using Application.Interfaces.IQuerys;
+using Application.Interfaces.IService;
+using Application.UseCase.Colores;
+using Application.UseCase.TallesService;
 using Infrastructure.Command;
 using Infrastructure.Persistence;
 using Infrastructure.Querys;
@@ -31,6 +34,10 @@ builder.Services.AddScoped<IColorCommand, ColorCommand>();
 builder.Services.AddScoped<IProductoCommand, ProductoCommand>();
 builder.Services.AddScoped<ITalleProductoCommand, TalleProductoCommand>();
 builder.Services.AddScoped<ITalleCommand, TalleCommand>();
+
+// Service
+builder.Services.AddScoped<IColorService, ColorService>();
+builder.Services.AddScoped<ITalleService, TalleService>();
 
 var app = builder.Build();
 

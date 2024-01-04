@@ -1,9 +1,4 @@
 ﻿using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Interfaces.IQuerys
 {
@@ -11,5 +6,6 @@ namespace Application.Interfaces.IQuerys
     {
         Color GetColorById(int colorId);
         List<Color> GetColorList();
+        bool ExisteColor(string color);
     }
 }

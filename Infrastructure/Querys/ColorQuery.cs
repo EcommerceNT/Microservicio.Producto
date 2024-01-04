@@ -1,11 +1,6 @@
 ﻿using Application.Interfaces.IQuerys;
 using Domain.Entities;
 using Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Querys
 {
@@ -30,6 +25,21 @@ namespace Infrastructure.Querys
             var colorList = _context.Colores.ToList();
 
             return colorList;
+        }
+
+        public bool ExisteColor(string color)
+        {
+            bool existeColor = _context.Colores
+                .Any(x => x.Descripcion.ToLower() == color.ToLower());
+
+            if (existeColor)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

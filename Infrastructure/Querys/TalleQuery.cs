@@ -1,15 +1,10 @@
 ﻿using Application.Interfaces.IQuerys;
 using Domain.Entities;
 using Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Querys
 {
-    public class TalleQuery : ITalleQuery 
+    public class TalleQuery : ITalleQuery
     {
         private readonly ProductoContext _context;
 
