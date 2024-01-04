@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Interfaces
+namespace Application.Interfaces.IQuerys
 {
-    public interface ITalleQuery
+    public interface IColorQuery
     {
-        Talle GetTalleById(int talleId);
-        List<Talle> GetTalleList();
+        Color GetColorById(int colorId);
+        List<Color> GetColorList();
     }
 }

@@ -1,4 +1,4 @@
-﻿using Application.Interfaces;
+﻿using Application.Interfaces.IQuerys;
 using Domain.Entities;
 using Infrastructure.Persistence;
 using System;

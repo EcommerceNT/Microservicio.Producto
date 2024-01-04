@@ -1,4 +1,6 @@
-using Application.Interfaces;
+using Application.Interfaces.ICommand;
+using Application.Interfaces.IQuerys;
+using Infrastructure.Command;
 using Infrastructure.Persistence;
 using Infrastructure.Querys;
 using Microsoft.EntityFrameworkCore;
@@ -16,11 +18,19 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration["ConnectionString"];
 builder.Services.AddDbContext<ProductoContext>(options => options.UseSqlServer(connectionString));
 
+// Querys
 builder.Services.AddScoped<IColorProductoQuery, ColorProductoQuery>();
 builder.Services.AddScoped<IColorQuery, ColorQuery>();
 builder.Services.AddScoped<IProductoQuery, ProductoQuery>();
 builder.Services.AddScoped<ITalleProductoQuery, TalleProductoQuery>();
 builder.Services.AddScoped<ITalleQuery, TalleQuery>();
+
+// Command
+builder.Services.AddScoped<IColorProductoCommand, ColorProductoCommand>();
+builder.Services.AddScoped<IColorCommand, ColorCommand>();
+builder.Services.AddScoped<IProductoCommand, ProductoCommand>();
+builder.Services.AddScoped<ITalleProductoCommand, TalleProductoCommand>();
+builder.Services.AddScoped<ITalleCommand, TalleCommand>();
 
 var app = builder.Build();
 
