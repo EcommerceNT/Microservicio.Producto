@@ -26,5 +26,20 @@ namespace Infrastructure.Querys
 
             return talleList;
         }
+
+        public bool ExisteTalle(string talle)
+        {
+            bool existeTalle = _context.Talles
+                .Any(x => x.Descripcion.ToLower() == talle.ToLower());
+
+            if (existeTalle)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

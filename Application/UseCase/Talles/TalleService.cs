@@ -68,7 +68,7 @@ namespace Application.UseCase.TallesService
             return MappingTalle(talle);
         }
 
-        public TalleResponse UpdateTalle(int talleId, ColorRequest request)
+        public TalleResponse UpdateTalle(int talleId, TalleRequest request)
         {
             var talle = _query.GetTalleById(talleId);
 
@@ -91,6 +91,10 @@ namespace Application.UseCase.TallesService
                 Id = talle.TalleId,
                 Descripcion = talle.Descripcion,
             };
+        }
+        public bool ExisteTalle(string talle)
+        {
+            return _query.ExisteTalle(talle);
         }
     }
 }

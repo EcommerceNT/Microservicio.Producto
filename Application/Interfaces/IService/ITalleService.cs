@@ -9,6 +9,7 @@ namespace Application.Interfaces.IService
         List<TalleResponse> GetTalleList();
         TalleResponse CreateTalle(TalleRequest request);
         TalleResponse RemoveTalle(int talleId);
-        TalleResponse UpdateTalle(int talleId, ColorRequest request);
+        TalleResponse UpdateTalle(int talleId, TalleRequest request);
+        bool ExisteTalle(string talle);
     }
 }

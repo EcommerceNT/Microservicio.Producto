@@ -6,5 +6,6 @@ namespace Application.Interfaces.IQuerys
     {
         Talle GetTalleById(int talleId);
         List<Talle> GetTalleList();
+        bool ExisteTalle(string talle);
     }
 }
